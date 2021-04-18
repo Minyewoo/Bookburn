@@ -15,14 +15,14 @@ namespace Bookburn.Backoffice.Controllers
             _mediator = mediator;
         }
 
-        [HttpPost("create")]
+        [HttpPost]
         public async Task<IActionResult> CreateRole([FromBody] CreateRoleCommand command)
         {
             await _mediator.Send(command, HttpContext.RequestAborted);
             return Ok();
         }
 
-        [HttpDelete("delete")]
+        [HttpDelete]
         public async Task<IActionResult> DeleteRole([FromBody] DeleteRoleCommand command)
         {
             await _mediator.Send(command, HttpContext.RequestAborted);

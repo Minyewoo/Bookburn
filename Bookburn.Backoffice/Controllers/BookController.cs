@@ -15,14 +15,14 @@ namespace Bookburn.Backoffice.Controllers
             _mediator = mediator;
         }
 
-        [HttpPost("create")]
+        [HttpPost]
         public async Task<IActionResult> CreateBook([FromBody] CreateBookCommand command)
         {
             await _mediator.Send(command, HttpContext.RequestAborted);
             return Ok();
         }
 
-        [HttpDelete("delete")]
+        [HttpDelete]
         public async Task<IActionResult> DeleteBook([FromBody] DeleteBookCommand command)
         {
             await _mediator.Send(command, HttpContext.RequestAborted);

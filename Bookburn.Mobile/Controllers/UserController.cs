@@ -16,7 +16,7 @@ namespace Bookburn.Mobile.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("get")]
+        [HttpGet]
         public async Task<IActionResult> GetUser([FromQuery] GetUserQuery query)
         {
             try
@@ -30,7 +30,7 @@ namespace Bookburn.Mobile.Controllers
             }
         }
 
-        [HttpGet("getToken")]
+        [HttpGet("token")]
         public async Task<IActionResult> GetToken([FromQuery] GetTokenQuery query)
         {
             try

@@ -15,14 +15,14 @@ namespace Bookburn.Mobile.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("getList")]
+        [HttpGet("list")]
         public async Task<IActionResult> GetBookList([FromQuery] GetBookListQuery query)
         {
             var books = await _mediator.Send(query, this.HttpContext.RequestAborted);
             return Ok(books);
         }
 
-        [HttpGet("get")]
+        [HttpGet]
         public async Task<IActionResult> GetBook([FromQuery] GetBookQuery query)
         {
             var book = await _mediator.Send(query, this.HttpContext.RequestAborted);
